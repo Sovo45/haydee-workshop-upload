@@ -3,7 +3,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/thegamerbay/haydee-workshop-upload)](https://github.com/thegamerbay/haydee-workshop-upload/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-A GitHub Action that automatically caches tools, packs a Haydee mod into a `.pack` file using the official `packer.exe`, and uploads it directly to the Steam Workshop.
+A GitHub Action that automatically packs a Haydee mod into a `.pack` file using the official `packer.exe`, and uploads it directly to the Steam Workshop.
 
 ## 🚀 Features
 * **Automated Packing:** Automatically runs Haydee's `packer.exe` on your provided folders.
