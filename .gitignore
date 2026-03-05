@@ -1,0 +1,13 @@
+# IDEs / Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Action runtime / Temporary files
+*.pack
